@@ -4,14 +4,15 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-	"techno-re-ecosystem/internal/config"
-	"techno-re-ecosystem/internal/logger"
-	"techno-re-ecosystem/internal/middleware"
+	"github.com/azizjon-top/techno-re-ecosystem/internal/config"
+	"github.com/azizjon-top/techno-re-ecosystem/internal/logger"
+	"github.com/azizjon-top/techno-re-ecosystem/internal/middleware"
 )
 
 func main() {
@@ -26,8 +27,8 @@ func main() {
 	defer logger.Get().Close()
 
 	logger.Info("Starting Techno RE Ecosystem Server",
-		"environment", cfg.Server.Environment,
-		"port", cfg.Server.Port,
+		zap.String("environment", cfg.Server.Environment),
+		zap.String("port", cfg.Server.Port),
 	)
 
 	// Initialize Gin router
@@ -140,9 +141,9 @@ func main() {
 
 	// Start server in goroutine
 	go func() {
-		logger.Info("Server starting", "addr", srv.Addr)
+		logger.Info("Server starting", zap.String("addr", srv.Addr))
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			logger.Fatal("Server failed to start", "error", err)
+			logger.Fatal("Server failed to start", zap.Error(err))
 		}
 	}()
 
@@ -157,7 +158,7 @@ func main() {
 	defer cancel()
 
 	if err := srv.Shutdown(ctx); err != nil {
-		logger.Error("Server shutdown error", "error", err)
+		logger.Error("Server shutdown error", zap.Error(err))
 		os.Exit(1)
 	}
 

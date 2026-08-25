@@ -1,9 +1,10 @@
 package middleware
 
 import (
+	"context"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"techno-re-ecosystem/internal/logger"
+	"github.com/azizjon-top/techno-re-ecosystem/internal/logger"
 	"time"
 )
 
@@ -75,7 +76,7 @@ func CORS() gin.HandlerFunc {
 // RequestTimeout middleware sets request timeout
 func RequestTimeout(timeout time.Duration) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := c.Request.Context().WithTimeout(timeout)
+		ctx, cancel := context.WithTimeout(c.Request.Context(), timeout)
 		defer cancel()
 		c.Request = c.Request.WithContext(ctx)
 		c.Next()

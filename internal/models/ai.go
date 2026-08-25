@@ -56,6 +56,6 @@ func AverageConfidence(validations []ConsensusValidation) decimal.Decimal {
 // IsConsensusReached checks if consensus threshold is met (V >= 0.8)
 func IsConsensusReached(validations []ConsensusValidation) bool {
 	avg := AverageConfidence(validations)
-	threshold := decimal.NewFromString("0.8")
+	threshold, _ := decimal.NewFromString("0.8")
 	return avg.GreaterThanOrEqual(threshold)
 }
