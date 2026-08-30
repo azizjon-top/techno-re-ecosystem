@@ -27,25 +27,25 @@ func NewAPIError(code string, message string, statusCode int) *APIError {
 
 // Common error codes
 const (
-	ErrCodeUnauthorized       = "UNAUTHORIZED"
-	ErrCodeForbidden          = "FORBIDDEN"
-	ErrCodeNotFound           = "NOT_FOUND"
-	ErrCodeBadRequest         = "BAD_REQUEST"
-	ErrCodeValidationFailed   = "VALIDATION_FAILED"
-	ErrCodeConflict           = "CONFLICT"
-	ErrCodeInternalError      = "INTERNAL_ERROR"
-	ErrCodeUserNotFound       = "USER_NOT_FOUND"
-	ErrCodeInvalidCredentials = "INVALID_CREDENTIALS"
-	ErrCodeProductNotFound    = "PRODUCT_NOT_FOUND"
+	ErrCodeUnauthorized        = "UNAUTHORIZED"
+	ErrCodeForbidden           = "FORBIDDEN"
+	ErrCodeNotFound            = "NOT_FOUND"
+	ErrCodeBadRequest          = "BAD_REQUEST"
+	ErrCodeValidationFailed    = "VALIDATION_FAILED"
+	ErrCodeConflict            = "CONFLICT"
+	ErrCodeInternalError       = "INTERNAL_ERROR"
+	ErrCodeUserNotFound        = "USER_NOT_FOUND"
+	ErrCodeInvalidCredentials  = "INVALID_CREDENTIALS"
+	ErrCodeProductNotFound     = "PRODUCT_NOT_FOUND"
 	ErrCodeInsufficientBalance = "INSUFFICIENT_BALANCE"
-	ErrCodeOrderNotFound      = "ORDER_NOT_FOUND"
-	ErrCodeSessionExpired     = "SESSION_EXPIRED"
+	ErrCodeOrderNotFound       = "ORDER_NOT_FOUND"
+	ErrCodeSessionExpired      = "SESSION_EXPIRED"
 )
 
 // Predefined errors
 var (
-	ErrUnauthorized = NewAPIError(ErrCodeUnauthorized, "Authentication required", 401)
-	ErrForbidden    = NewAPIError(ErrCodeForbidden, "Access denied", 403)
-	ErrNotFound     = NewAPIError(ErrCodeNotFound, "Resource not found", 404)
+	ErrUnauthorized   = NewAPIError(ErrCodeUnauthorized, "Authentication required", 401)
+	ErrForbidden      = NewAPIError(ErrCodeForbidden, "Access denied", 403)
+	ErrNotFound       = NewAPIError(ErrCodeNotFound, "Resource not found", 404)
 	ErrInternalServer = NewAPIError(ErrCodeInternalError, "Internal server error", 500)
 )

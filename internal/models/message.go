@@ -14,13 +14,13 @@ type Chat struct {
 }
 
 type Message struct {
-	MessageID        uuid.UUID          `db:"message_id" json:"message_id"`
-	ChatID           uuid.UUID          `db:"chat_id" json:"chat_id"`
-	SenderID         uuid.UUID          `db:"sender_id" json:"sender_id"`
-	EncryptedText    []byte             `db:"encrypted_text" json:"-"`
-	TKTransferAmount *decimal.Decimal   `db:"tk_transfer_amount" json:"tk_transfer_amount"`
-	IsRead           bool               `db:"is_read" json:"is_read"`
-	CreatedAt        time.Time          `db:"created_at" json:"created_at"`
+	MessageID        uuid.UUID        `db:"message_id" json:"message_id"`
+	ChatID           uuid.UUID        `db:"chat_id" json:"chat_id"`
+	SenderID         uuid.UUID        `db:"sender_id" json:"sender_id"`
+	EncryptedText    []byte           `db:"encrypted_text" json:"-"`
+	TKTransferAmount *decimal.Decimal `db:"tk_transfer_amount" json:"tk_transfer_amount"`
+	IsRead           bool             `db:"is_read" json:"is_read"`
+	CreatedAt        time.Time        `db:"created_at" json:"created_at"`
 }
 
 // EncryptMessage placeholder for E2EE encryption

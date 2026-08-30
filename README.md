@@ -25,7 +25,7 @@ A comprehensive backend ecosystem for the Techno RE platform - combining e-comme
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Go 1.21+
+- Go 1.25+
 - Docker & Docker Compose
 - PostgreSQL 15+
 - Redis 7+
@@ -220,7 +220,7 @@ The API returns structured error responses:
 - `USER_NOT_FOUND` - User doesn't exist
 - `VALIDATION_FAILED` - Input validation failed
 - `INSUFFICIENT_BALANCE` - Insufficient wallet balance
-- `PRODUCT_NOT_IN_STOCK` - Product unavailable
+- `PRODUCT_NOT_FOUND` - Product unavailable
 - `INTERNAL_ERROR` - Server error
 
 ## 📊 Database Schema

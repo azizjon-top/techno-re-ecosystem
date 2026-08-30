@@ -38,27 +38,27 @@ type DatabaseConfig struct {
 
 // JWTConfig holds JWT token configuration
 type JWTConfig struct {
-	Secret           string
-	AccessTokenTTL   time.Duration
-	RefreshTokenTTL  time.Duration
-	TokenIssuer      string
-	TokenAudience    string
+	Secret          string
+	AccessTokenTTL  time.Duration
+	RefreshTokenTTL time.Duration
+	TokenIssuer     string
+	TokenAudience   string
 }
 
 // CacheConfig holds cache configuration
 type CacheConfig struct {
-	Enabled        bool
-	RedisAddr      string
-	DefaultTTL     time.Duration
-	MaxRetries     int
+	Enabled    bool
+	RedisAddr  string
+	DefaultTTL time.Duration
+	MaxRetries int
 }
 
 // MiningConfig holds mining-related configuration
 type MiningConfig struct {
-	RewardPerFact        string // decimal string
-	MinSessionDuration   time.Duration
-	MaxCPUUsagePercent   int
-	ConsensusThreshold   float64
+	RewardPerFact      string // decimal string
+	MinSessionDuration time.Duration
+	MaxCPUUsagePercent int
+	ConsensusThreshold float64
 }
 
 // EmailConfig holds email service configuration
@@ -73,12 +73,12 @@ type EmailConfig struct {
 
 // S3Config holds AWS S3 configuration
 type S3Config struct {
-	Enabled       bool
-	Region        string
-	AccessKeyID   string
+	Enabled         bool
+	Region          string
+	AccessKeyID     string
 	SecretAccessKey string
-	BucketName    string
-	Endpoint      string
+	BucketName      string
+	Endpoint        string
 }
 
 // Load loads configuration from environment variables
