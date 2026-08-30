@@ -15,17 +15,17 @@ const (
 )
 
 type User struct {
-	UserID          uuid.UUID             `db:"user_id" json:"user_id"`
-	Email           string                `db:"email" json:"email"`
-	Phone           *string               `db:"phone" json:"phone"`
-	PasswordHash    string                `db:"password_hash" json:"-"`
-	AvatarURL       *string               `db:"avatar_url" json:"avatar_url"`
-	Role            UserRole              `db:"role" json:"role"`
-	MiningEnabled   bool                  `db:"mining_enabled" json:"mining_enabled"`
-	MiningCPULimit  int                   `db:"mining_cpu_limit" json:"mining_cpu_limit"`
+	UserID           uuid.UUID              `db:"user_id" json:"user_id"`
+	Email            string                 `db:"email" json:"email"`
+	Phone            *string                `db:"phone" json:"phone"`
+	PasswordHash     string                 `db:"password_hash" json:"-"`
+	AvatarURL        *string                `db:"avatar_url" json:"avatar_url"`
+	Role             UserRole               `db:"role" json:"role"`
+	MiningEnabled    bool                   `db:"mining_enabled" json:"mining_enabled"`
+	MiningCPULimit   int                    `db:"mining_cpu_limit" json:"mining_cpu_limit"`
 	SecuritySettings map[string]interface{} `db:"security_settings" json:"security_settings"`
-	CreatedAt       time.Time             `db:"created_at" json:"created_at"`
-	UpdatedAt       time.Time             `db:"updated_at" json:"updated_at"`
+	CreatedAt        time.Time              `db:"created_at" json:"created_at"`
+	UpdatedAt        time.Time              `db:"updated_at" json:"updated_at"`
 }
 
 // HashPassword hashes a plaintext password using bcrypt

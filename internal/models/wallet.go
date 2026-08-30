@@ -10,13 +10,13 @@ type TransactionType string
 type TransactionStatus string
 
 const (
-	TransactionMiningReward           TransactionType = "mining_reward"
-	TransactionPurchaseDiscount       TransactionType = "purchase_discount"
-	TransactionSubscriptionPayment    TransactionType = "subscription_payment"
-	TransactionTransferSent           TransactionType = "transfer_sent"
-	TransactionTransferReceived       TransactionType = "transfer_received"
-	TransactionAdsPayment             TransactionType = "ads_payment"
-	TransactionConsensusValidationRew TransactionType = "consensus_validation_reward"
+	TransactionMiningReward              TransactionType = "mining_reward"
+	TransactionPurchaseDiscount          TransactionType = "purchase_discount"
+	TransactionSubscriptionPayment       TransactionType = "subscription_payment"
+	TransactionTransferSent              TransactionType = "transfer_sent"
+	TransactionTransferReceived          TransactionType = "transfer_received"
+	TransactionAdsPayment                TransactionType = "ads_payment"
+	TransactionConsensusValidationReward TransactionType = "consensus_validation_reward"
 
 	TransactionStatusPending   TransactionStatus = "pending"
 	TransactionStatusCompleted TransactionStatus = "completed"
